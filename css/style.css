@@ -1,0 +1,1637 @@
+@charset "UTF-8";
+
+.pc__left-text,
+.pc__right-title,
+.menu-button,
+.button,
+body {
+  font-family: "Anton-Regular";
+  font-weight: 400;
+}
+
+.xbox__left-text,
+.xbox__right-title,
+.menu-list .xbox-item {
+  font-family: "X360";
+  font-weight: 400;
+}
+
+.hero-page__text,
+.hero-page__title,
+.footer__contact,
+.footer__title {
+  font-family: "logiclodger";
+  font-weight: 400;
+}
+
+.playstation__left-text,
+.playstation__right-title,
+.menu-list .pc-item,
+.menu-list .playstation-item {
+  font-family: "zrnic-rg";
+  font-weight: 400;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  line-height: 30px;
+  overflow-x: hidden;
+  min-width: 320px;
+  color: #B2D6EB;
+  background-color: #141414;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.hero,
+.playstation,
+.xbox,
+.pc {
+  margin-bottom: -1px;
+}
+
+.container {
+  max-width: 1620px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.menu-container {
+  max-width: 1620px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+.footer-container {
+  max-width: 1824px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+.title {
+  font-size: 48px;
+  line-height: 72px;
+  letter-spacing: 5.4px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  width: 75px;
+  height: 75px;
+  outline: 5px solid rgba(77, 86, 92, 0.9);
+  border-radius: 50%;
+  color: rgba(178, 214, 235, 0.9);
+  background-color: rgba(22, 26, 29, 0.8);
+  padding-left: 3px;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+/********* RESET ***********/
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+p {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input {
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  display: block;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/*
+- можно додати конкретний клас де треба використати кастомний скролл
+*/
+
+/*
+Cніппет(HTML): tick
+*/
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.header__wrapper {
+  position: fixed;
+  width: 100%;
+  top: 40px;
+  left: 0;
+  z-index: 50;
+  transition: top 0.3s ease 0s;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__nav-items {
+  display: flex;
+  padding: 8px;
+  gap: 0px 8px;
+  width: 450px;
+  border: 3px solid #C200F9;
+  border-radius: 40px;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s linear 0s, visibility 0.2s linear 0s;
+}
+
+.header__nav-item {
+  flex: 1 1 auto;
+  height: 34px;
+}
+
+.header__nav-item:active {
+  transform: scale(0.95);
+}
+
+.header__nav-img {
+  will-change: transform;
+}
+
+.header__nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.header .nav-item__playstation {
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: rgba(13, 27, 77, 0.8);
+  transition: background-color 0.3s ease 0s;
+}
+
+.header .nav-item__playstation > .header__nav-link > img {
+  width: 25px;
+  height: 21px;
+}
+
+.header .nav-item__xbox {
+  background-color: rgba(17, 60, 4, 0.8);
+  transition: background-color 0.3s ease 0s;
+}
+
+.header .nav-item__xbox > .header__nav-link > img {
+  width: 12px;
+  height: 16px;
+}
+
+.header .nav-item__pc {
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: rgba(52, 14, 14, 0.8);
+  transition: background-color 0.3s ease 0s;
+}
+
+.header .nav-item__pc > .header__nav-link > img {
+  width: 16px;
+  height: 16px;
+}
+
+.no-webp .footer{
+  background-image: url("../img/footer/footer-bg.png"); }
+
+.footer {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  overflow-y: hidden;
+}
+
+.footer__cage {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 391px;
+  transition: transform 0.3s ease 0s;
+  z-index: 10;
+}
+
+.footer__cage.open {
+  transform: translateY(315px);
+}
+
+.footer__cage.open .footer__title {
+  transform: translateY(315px);
+}
+
+.no-webp .footer__cage-lock{
+  background-image: url("../img/footer/lock.png"); }
+
+.footer__cage-lock {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 210px;
+  height: 76px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .footer-key {
+  position: relative;
+  top: 9px;
+  width: 43px;
+  height: 43px;
+  font-size: 24px;
+  line-height: 36px;
+  border: 3px solid #F70103;
+  border-radius: 10px;
+  color: #F70103;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 7px 8px 4px rgba(83, 54, 54, 0.6);
+  transition: text-shadow 0.3s ease 0s;
+}
+
+.footer .footer-key:active {
+  transform: scale(0.95);
+}
+
+.footer .footer-key.active .footer-key__close {
+  opacity: 0;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.footer .footer-key.active .footer-key__open {
+  opacity: 1;
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+}
+
+.footer .footer-key__close {
+  opacity: 1;
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+}
+
+.footer .footer-key__open {
+  opacity: 0;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.no-webp .footer__cage-body{
+  background-image: url("../img/footer/cage.png"); }
+
+.footer__cage-body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: absolute;
+  min-height: 315px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.footer__inner {
+  padding-top: 145px;
+  margin-bottom: 115px;
+}
+
+.footer__title {
+  display: inline-block;
+  margin-bottom: 50px;
+  margin-left: 285px;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 1.4px;
+  background: linear-gradient(to right, #B2D6EB, #4A68D3);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: transform 0.3s linear 0.1s;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px 160px;
+}
+
+.footer__links {
+  position: relative;
+  min-width: 165px;
+  min-height: 170px;
+}
+
+.footer__link {
+  position: absolute;
+  will-change: transform;
+}
+
+.footer__link-image {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.1s ease 0s;
+}
+
+.footer__link-twitch {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer__link-telegram {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer__link-facebook {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer__link-tiktok {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer__contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px 0px;
+}
+
+.footer__contact {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 1.4px;
+}
+
+.footer__contact-tel,
+.footer__contact-mail,
+.footer__contact-adress {
+  display: inline-block;
+  transform-style: preserve-3d;
+  background: linear-gradient(to right, #B2D6EB, #4A68D3);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: transform 0.3s ease 0s;
+}
+
+@font-face {
+  font-family: Anton-Regular;
+  font-display: swap;
+  src: url("../fonts/Anton-Regular.woff") format("woff"), url("../fonts/Anton-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: logiclodger;
+  font-display: swap;
+  src: url("../fonts/logiclodger.woff") format("woff"), url("../fonts/logiclodger.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inder-Regular;
+  font-display: swap;
+  src: url("../fonts/Inder-Regular.woff") format("woff"), url("../fonts/Inder-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: zrnic-rg;
+  font-display: swap;
+  src: url("../fonts/zrnic-rg.woff") format("woff"), url("../fonts/zrnic-rg.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: X360;
+  font-display: swap;
+  src: url("../fonts/X360.woff") format("woff"), url("../fonts/X360.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/***********************************************/
+
+/*******************HERO************************/
+
+/***********************************************/
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
+
+/***********************************************/
+
+/****************HERO-PAGE**********************/
+
+/***********************************************/
+
+.no-webp .hero-page{
+  background-image: url("../img/hero/hero-bg-1920px.png"); }
+
+.hero-page {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 5;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+  transition: transform 0.4s ease-in 0s, opacity 0.4s step-start 0.3s, visibility 0.4s step-start 0.3s;
+}
+
+.hero-page__inner {
+  padding-top: 200px;
+}
+
+.hero-page__info {
+  max-width: 850px;
+  min-height: 630px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero-page__title {
+  position: relative;
+  padding-bottom: 60px;
+  font-size: 52px;
+  line-height: 78px;
+  letter-spacing: 5.4px;
+  background: linear-gradient(to right, #B2D6EB, #4A68D3);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  z-index: 5;
+}
+
+.hero-page__text {
+  position: relative;
+  max-width: 525px;
+  padding-bottom: 105px;
+  font-size: 20px;
+  letter-spacing: 1.4px;
+  z-index: 5;
+}
+
+.hero-page__button {
+  box-shadow: 0px 0px 20px rgba(194, 0, 249, 0.7);
+  transition: outline 0.3s ease 0s;
+  z-index: 5;
+}
+
+.hero-page__decoration {
+  position: absolute;
+  will-change: transform;
+}
+
+.hero-page .decoration-playstation {
+  right: 297px;
+  bottom: 0;
+}
+
+.hero-page .decoration-xbox {
+  right: 0;
+  bottom: 17px;
+}
+
+.hero-page .decoration-kayboard {
+  right: 117px;
+  bottom: 146px;
+}
+
+.hero-page .decoration-mouse {
+  right: 0px;
+  bottom: 290px;
+}
+
+.menu-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 380px;
+  width: 130px;
+  height: 130px;
+  z-index: 20;
+  border-radius: 50%;
+  outline: 10px solid rgba(194, 0, 249, 0.9);
+  background-color: rgba(0, 3, 46, 0.8);
+  box-shadow: 0px 0px 20px rgba(194, 0, 249, 0.8);
+  text-transform: uppercase;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 5.4px;
+  color: rgba(178, 214, 235, 0.9);
+}
+
+.menu-button__icon {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 20;
+  transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+}
+
+.menu-button__icon-enter {
+  right: -73px;
+  top: -27px;
+  min-width: 100px;
+  height: 65px;
+}
+
+.menu-button__icon-esc {
+  right: -53px;
+  top: -37px;
+  min-width: 80px;
+  height: 75px;
+}
+
+/***********************************************/
+
+/****************HERO-MENU**********************/
+
+/***********************************************/
+
+.no-webp .hero-menu{
+  background-image: url("../img/hero/menu-bg.jpg"); }
+
+.hero-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+  will-change: transform;
+}
+
+.menu-list {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 365px;
+}
+
+.menu-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  max-width: 260px;
+}
+
+.menu-list__item {
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 54px;
+  letter-spacing: 5.4px;
+  transition: all 0.3s ease 0s;
+  will-change: transform;
+}
+
+.menu-list .playstation-item {
+  text-shadow: 0px 0px 10px #0013F7;
+  transition: text-shadow 0.3s ease 0s, transform 0.3s ease 0s;
+}
+
+.menu-list .xbox-item {
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px #54B45A;
+  transition: text-shadow 0.3s ease 0s, transform 0.3s ease 0s;
+}
+
+.menu-list .pc-item {
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px #F70103;
+  transition: text-shadow 0.3s ease 0s, transform 0.3s ease 0s;
+}
+
+/***********************************************/
+
+/****************Playstation********************/
+
+/***********************************************/
+
+.playstation {
+  position: relative;
+  overflow: hidden;
+}
+
+.no-webp .playstation__bg{
+  background-image: url("../img/playstation/playstation-window.jpg"); }
+
+.playstation__bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -400px;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  will-change: transform;
+  z-index: 1;
+}
+
+.no-webp .playstation__layer{
+  background-image: url("../img/playstation/playstation-bg-1920px.png"); }
+
+.playstation__layer {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 5;
+}
+
+.playstation__inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 175px;
+  padding-bottom: 207px;
+  max-width: 865px;
+  margin-left: auto;
+}
+
+.playstation__decor-image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 100px;
+  bottom: 350px;
+  transform-origin: -70px center;
+  animation: psdecor 7s infinite linear;
+  z-index: 1;
+}
+
+@keyframes psdecor {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.playstation__right {
+  order: 1;
+  max-width: 400px;
+}
+
+.playstation__right-title {
+  position: relative;
+  text-shadow: 0px 0px 10px #0013F7;
+  margin-bottom: 100px;
+  text-align: right;
+  z-index: 5;
+}
+
+.playstation__right-image {
+  position: relative;
+  margin-left: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 2;
+}
+
+.playstation__right-image img {
+  max-height: 400px;
+}
+
+.playstation__left {
+  position: relative;
+  max-width: 420px;
+  z-index: 10;
+}
+
+.playstation__left-text {
+  position: relative;
+  font-size: 20px;
+  letter-spacing: 1.4px;
+  z-index: 5;
+}
+
+.playstation__left-text:first-child {
+  padding-top: 105px;
+  margin-bottom: 35px;
+}
+
+.playstation__left-text:nth-child(2) {
+  margin-bottom: 70px;
+}
+
+.playstation__left-button {
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(0, 19, 247, 0.7);
+  transition: outline 0.3s ease 0s;
+  z-index: 5;
+}
+
+/***********************************************/
+
+/****************XBOX********************/
+
+/***********************************************/
+
+.xbox {
+  position: relative;
+  overflow: hidden;
+}
+
+.no-webp .xbox__bg{
+  background-image: url("../img/xbox/xbox-window.jpg"); }
+
+.xbox__bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -800px;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  will-change: transform;
+  z-index: 1;
+}
+
+.no-webp .xbox__layer{
+  background-image: url("../img/xbox/xbox-bg-1920px.png"); }
+
+.xbox__layer {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 5;
+}
+
+.xbox__inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 175px;
+  padding-bottom: 207px;
+  max-width: 865px;
+}
+
+.xbox__decor-image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 350px;
+  bottom: 350px;
+  transform-origin: -70px center;
+  animation: xboxdecor 7s infinite linear;
+  z-index: 1;
+}
+
+@keyframes xboxdecor {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.xbox__right {
+  max-width: 400px;
+}
+
+.xbox__right-title {
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px #54B45A;
+  margin-bottom: 100px;
+  text-align: left;
+  z-index: 5;
+}
+
+.xbox__right-image {
+  position: relative;
+  margin-left: auto;
+  z-index: 2;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.xbox__right-image img {
+  max-height: 400px;
+}
+
+.xbox__left {
+  position: relative;
+  max-width: 420px;
+  z-index: 10;
+}
+
+.xbox__left-text {
+  position: relative;
+  font-size: 20px;
+  letter-spacing: 1.4px;
+  z-index: 5;
+}
+
+.xbox__left-text:first-child {
+  padding-top: 105px;
+  margin-bottom: 35px;
+}
+
+.xbox__left-text:nth-child(2) {
+  margin-bottom: 70px;
+}
+
+.xbox__left-button {
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(84, 180, 90, 0.7);
+  transition: outline 0.3s ease 0s;
+  z-index: 5;
+}
+
+/***********************************************/
+
+/********************PC*************************/
+
+/***********************************************/
+
+.pc {
+  position: relative;
+  overflow: hidden;
+}
+
+.no-webp .pc__bg{
+  background-image: url("../img/pc/pc-window1.jpg"); }
+
+.pc__bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1200px;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+  will-change: transform;
+}
+
+.no-webp .pc__layer{
+  background-image: url("../img/pc/pc-bg-1920px.png"); }
+
+.pc__layer {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 5;
+}
+
+.pc__inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 175px;
+  padding-bottom: 207px;
+  max-width: 865px;
+  margin-left: auto;
+}
+
+.pc__decor-image {
+  position: absolute;
+  width: 150px;
+  height: 104px;
+  right: 100px;
+  bottom: 350px;
+  transform-origin: -70px center;
+  animation: pcdecor 7s infinite linear;
+  z-index: 1;
+}
+
+@keyframes pcdecor {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.pc__right {
+  order: 1;
+  max-width: 400px;
+}
+
+.pc__right-title {
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px #F70103;
+  margin-bottom: 100px;
+  text-align: right;
+  z-index: 5;
+}
+
+.pc__right-image {
+  position: relative;
+  margin-left: auto;
+  z-index: 2;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.pc__right-image img {
+  max-height: 400px;
+}
+
+.pc__left {
+  position: relative;
+  max-width: 420px;
+  z-index: 10;
+}
+
+.pc__left-text {
+  position: relative;
+  font-size: 20px;
+  letter-spacing: 1.4px;
+  z-index: 5;
+}
+
+.pc__left-text:first-child {
+  padding-top: 105px;
+  margin-bottom: 35px;
+}
+
+.pc__left-text:nth-child(2) {
+  margin-bottom: 70px;
+}
+
+.pc__left-button {
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(247, 1, 3, 0.7);
+  transition: outline 0.3s ease 0s;
+  z-index: 5;
+}
+
+/************************************************************/
+
+/************************************************************/
+
+@media (min-width: 1359px) {
+  .menu-open body {
+    overflow-y: hidden;
+  }
+
+  .menu-open .wrapper {
+    overflow-x: visible;
+  }
+
+  .menu-open .header__wrapper {
+    top: -100px;
+  }
+
+  .menu-open .hero-page {
+    will-change: transform;
+    transform: scale(5) translateX(-400px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .menu-sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 118px;
+    height: 100%;
+    border-left: 3px solid #4A1177;
+    z-index: 100;
+    overflow: hidden;
+  }
+
+  .menu-sidebar__inner {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    height: 150%;
+    background-color: #8400ad;
+    animation: ticker 15s linear infinite;
+  }
+
+  .menu-sidebar__box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #8400ad;
+  }
+
+@keyframes ticker {
+    0% {
+      transform: translate3d(0%, 0%, 0);
+    }
+
+    100% {
+      transform: translate3d(0%, -100%, 0);
+    }
+}
+
+  .menu-sidebar__image {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .menu-button {
+    transform: translateX(-50%);
+    right: 33%;
+    top: 43px;
+    max-width: 50px;
+    height: 50px;
+    outline: 5px solid rgba(194, 0, 249, 0.9);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2px;
+    z-index: 50;
+  }
+
+  .menu-button__icon-enter {
+    right: -65px;
+    top: 7px;
+    min-width: 50px;
+    height: 33px;
+  }
+
+  .menu-button__icon-esc {
+    right: -65px;
+    top: 7px;
+    min-width: 40px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 1590px) {
+  .title {
+    font-size: calc(26px + 22 * (100vw - 320px) / 1270);
+  }
+
+  .title {
+    line-height: calc(39px + 33 * (100vw - 320px) / 1270);
+  }
+
+  .button {
+    font-size: calc(18px + 2 * (100vw - 320px) / 1270);
+  }
+
+  .button {
+    width: calc(55px + 20 * (100vw - 320px) / 1270);
+  }
+
+  .button {
+    height: calc(55px + 20 * (100vw - 320px) / 1270);
+  }
+
+  .footer__inner {
+    margin-bottom: calc(65px + 50 * (100vw - 320px) / 1270);
+  }
+
+  .footer__title {
+    font-size: calc(24px + 8 * (100vw - 320px) / 1270);
+  }
+
+  .footer__title {
+    line-height: calc(36px + 12 * (100vw - 320px) / 1270);
+  }
+
+  .footer__contact {
+    font-size: calc(18px + 6 * (100vw - 320px) / 1270);
+  }
+
+  .footer__contact {
+    line-height: calc(27px + 3 * (100vw - 320px) / 1270);
+  }
+
+  .hero-page__inner {
+    padding-top: calc(145px + 55 * (100vw - 320px) / 1270);
+  }
+
+  .hero-page__title {
+    padding-bottom: calc(40px + 20 * (100vw - 320px) / 1270);
+  }
+
+  .hero-page__title {
+    font-size: calc(42px + 10 * (100vw - 320px) / 1270);
+  }
+
+  .hero-page__title {
+    line-height: calc(63px + 15 * (100vw - 320px) / 1270);
+  }
+
+  .hero-page__text {
+    padding-bottom: calc(62px + 43 * (100vw - 320px) / 1270);
+  }
+
+  .hero-page__text {
+    font-size: calc(16px + 4 * (100vw - 320px) / 1270);
+  }
+
+  .menu-list__items {
+    gap: calc(50px + 50 * (100vw - 320px) / 1270);
+  }
+
+  .menu-list__item {
+    font-size: calc(24px + 12 * (100vw - 320px) / 1270);
+  }
+
+  .playstation__inner {
+    padding-top: calc(110px + 65 * (100vw - 320px) / 1270);
+  }
+
+  .playstation__inner {
+    padding-bottom: calc(80px + 127 * (100vw - 320px) / 1270);
+  }
+
+  .playstation__inner {
+    max-width: calc(650px + 215 * (100vw - 320px) / 1270);
+  }
+
+  .playstation__left-text {
+    font-size: calc(16px + 4 * (100vw - 320px) / 1270);
+  }
+
+  .xbox__inner {
+    padding-top: calc(110px + 65 * (100vw - 320px) / 1270);
+  }
+
+  .xbox__inner {
+    padding-bottom: calc(80px + 127 * (100vw - 320px) / 1270);
+  }
+
+  .xbox__inner {
+    max-width: calc(650px + 215 * (100vw - 320px) / 1270);
+  }
+
+  .xbox__left-text {
+    font-size: calc(16px + 4 * (100vw - 320px) / 1270);
+  }
+
+  .pc__inner {
+    padding-top: calc(110px + 65 * (100vw - 320px) / 1270);
+  }
+
+  .pc__inner {
+    padding-bottom: calc(80px + 127 * (100vw - 320px) / 1270);
+  }
+
+  .pc__inner {
+    max-width: calc(650px + 215 * (100vw - 320px) / 1270);
+  }
+
+  .pc__left-text {
+    font-size: calc(16px + 4 * (100vw - 320px) / 1270);
+  }
+}
+
+@media (max-width: 1559px) {
+  .hero-page__info {
+    max-width: 630px;
+  }
+}
+
+@media (max-width: 1359px) {
+  .no-webp .hero-page{
+    background-image: url("../img/hero/hero-bg-1590px.png"); }
+  .hero-page {
+    background-position: top center;
+  }
+
+  .hero-page__info {
+    max-width: 100%;
+  }
+
+  .hero-menu__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-list {
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .header__nav {
+    gap: 0px 40px;
+  }
+
+  .menu-button {
+    position: relative;
+    top: 0px;
+    transform: translateY(0%);
+    right: 0px;
+    max-width: 50px;
+    height: 50px;
+    outline: 5px solid rgba(194, 0, 249, 0.9);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2px;
+  }
+
+  .menu-sidebar {
+    display: none;
+  }
+
+  /*************MENU-OPEN******************/
+
+  .menu-open body {
+    overflow: hidden;
+  }
+
+  .menu-open .hero-page {
+    transform: translateY(0);
+  }
+
+  .menu-open .header__nav-items {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .hero-page {
+    will-change: transform;
+    animation: menu-close 0.3s forwards linear;
+  }
+
+  .hero-page.active {
+    animation: menu-open 0.5s forwards linear 0.2s;
+  }
+
+@keyframes menu-open {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(250px);
+    }
+
+    70% {
+      transform: translateY(250px);
+    }
+
+    100% {
+      transform: translateY(-150%);
+    }
+}
+
+@keyframes menu-close {
+    0% {
+      transform: translateY(-150%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+}
+
+  .playstation__decor-image,
+  .pc__decor-image {
+    display: none;
+  }
+
+  .playstation__inner,
+  .pc__inner {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .playstation__right,
+  .pc__right {
+    order: 0;
+  }
+
+  .playstation__right-title,
+  .pc__right-title {
+    max-width: 420px;
+    margin-left: auto;
+    margin-bottom: 50px;
+    text-align: left;
+  }
+
+  .playstation__right-image,
+  .pc__right-image {
+    position: absolute;
+    left: 0;
+  }
+
+  .playstation__left,
+  .pc__left {
+    margin-left: auto;
+  }
+
+  .playstation__left-text:first-child,
+  .pc__left-text:first-child {
+    padding-top: 0;
+  }
+
+  .xbox__decor-image {
+    display: none;
+  }
+
+  .xbox__inner {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .xbox__right-title {
+    max-width: 420px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: left;
+  }
+
+  .xbox__right-image {
+    position: absolute;
+    right: 0;
+  }
+
+  .xbox__left {
+    margin-right: auto;
+  }
+
+  .xbox__left-text:first-child {
+    padding-top: 0;
+  }
+
+  .no-webp .playstation__layer{
+    background-image: url("../img/playstation/playstation-bg-1590px.png"); }
+
+  .no-webp .xbox__layer{
+    background-image: url("../img/xbox/xbox-bg-360px.png"); }
+
+  .no-webp .pc__layer{
+    background-image: url("../img/pc/pc-bg-1590px.png"); }
+}
+
+@media (max-width: 992px) {
+  .footer__inner {
+    padding-top: 80px;
+  }
+
+  .footer__cage {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .footer__title {
+    margin-left: 0;
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__inner {
+    text-align: center;
+  }
+
+  .footer__title {
+    margin: 0 auto 50px auto;
+  }
+
+  .footer__social {
+    flex-direction: column;
+    gap: 40px 0px;
+  }
+}
+
+@media (any-hover: hover) {
+  .header .nav-item__playstation:hover {
+    background-color: #2957fb;
+  }
+
+  .header .nav-item__xbox:hover {
+    background-color: #53ff1f;
+  }
+
+  .header .nav-item__pc:hover {
+    background-color: #ff4545;
+  }
+
+  .footer .footer-key:hover {
+    text-shadow: 0px 0px 4px white;
+  }
+
+  .footer__link-image:hover {
+    transform: scale(0.95);
+  }
+
+  .footer__contact-tel:hover,
+  .footer__contact-mail:hover {
+    transform: matrix(1.4, 0, 0, 1.1, 60, 0);
+  }
+
+  .hero-page__button:hover {
+    outline: 5px solid rgba(194, 0, 249, 0.65);
+  }
+
+  .menu-button:hover .menu-button__icon-enter.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-button:hover .menu-button__icon-esc.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-list .playstation-item:hover {
+    transform: translate(-3px, -5px);
+    text-shadow: 3px 5px 4px #0013F7;
+  }
+
+  .menu-list .xbox-item:hover {
+    transform: translate(-3px, -5px);
+    text-shadow: 3px 5px 4px #54B45A;
+  }
+
+  .menu-list .pc-item:hover {
+    transform: translate(-3px, -5px);
+    text-shadow: 3px 5px 4px #F70103;
+  }
+
+  .playstation__left-button:hover {
+    outline: 5px solid rgba(0, 19, 247, 0.65);
+  }
+
+  .xbox__left-button:hover {
+    outline: 5px solid rgba(84, 180, 90, 0.65);
+  }
+
+  .pc__left-button:hover {
+    outline: 5px solid rgba(247, 1, 3, 0.65);
+  }
+}
+
+.webp .footer{ background-image: url(../img/footer/footer-bg.webp); }
+
+.webp .footer__cage-lock{ background-image: url(../img/footer/lock.webp); }
+
+.webp .footer__cage-body{ background-image: url(../img/footer/cage.webp); }
+
+.webp .hero-page{ background-image: url(../img/hero/hero-bg-1920px.webp); }
+
+.webp .hero-menu{ background-image: url(../img/hero/menu-bg.webp); }
+
+.webp .playstation__bg{ background-image: url(../img/playstation/playstation-window.webp); }
+
+.webp .playstation__layer{ background-image: url(../img/playstation/playstation-bg-1920px.webp); }
+
+.webp .xbox__bg{ background-image: url(../img/xbox/xbox-window.webp); }
+
+.webp .xbox__layer{ background-image: url(../img/xbox/xbox-bg-1920px.webp); }
+
+.webp .pc__bg{ background-image: url(../img/pc/pc-window1.webp); }
+
+.webp .pc__layer{ background-image: url(../img/pc/pc-bg-1920px.webp); }
+
+@media (max-width: 1359px){
+
+  .webp .hero-page{ background-image: url(../img/hero/hero-bg-1590px.webp); }
+}
+
+@media (max-width: 1359px){
+
+  .webp .playstation__layer{ background-image: url(../img/playstation/playstation-bg-1590px.webp); }
+}
+
+@media (max-width: 1359px){
+
+  .webp .xbox__layer{ background-image: url(../img/xbox/xbox-bg-360px.webp); }
+}
+
+@media (max-width: 1359px){
+
+  .webp .pc__layer{ background-image: url(../img/pc/pc-bg-1590px.webp); }
+}
